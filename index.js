@@ -30,3 +30,29 @@ function decreaseCount(){
     }
 }
 */
+
+var output = [];
+var count = 99;
+
+function decreaseCount(){
+    while(count >= 0){
+        output.push(lyricForCount(count));
+        console.log (output);
+        count--;
+        output.pop();
+    }
+}
+
+function lyricForCount(count){
+  var countDecreased = count-1;
+  var lyric;
+if(count >= 2){
+  lyric= (count + " bottles of beer on the wall, " + count + " bottles of beer. Take one down and pass it around, " + countDecreased + " bottles of beer on the wall.");
+} if(count === 1){
+  lyric= (count + " bottle of beer on the wall, " + count + " bottle of beer. Take one down and pass it around, no more bottles of beer on the wall.");
+} if(count === 0){
+  lyric= ("No more bottles of beer on the wall, no more bottles of beer. Go to the store and buy some more, 99 bottles of beer on the wall.");
+}
+return lyric;
+}
+decreaseCount();
